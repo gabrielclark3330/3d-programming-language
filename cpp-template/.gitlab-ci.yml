@@ -1,0 +1,35 @@
+# This file is a template, and might need editing before it works on your project.
+# use the official gcc image, based on debian
+# can use verions as well, like gcc:5.2
+# see https://hub.docker.com/_/gcc/
+image: root3287/dev_env
+
+build:
+  stage: build
+  
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+  # instead of calling g++ directly you can also use some build toolkit like make
+  # install the necessary build tools when needed
+  # before_script:
+  #   - apt update && apt -y install make autoconf
+  script:
+    - premake5 gmake2
+    - make -C workspace/ config=dist
+    - premake5 gmake2 --os=windows
+    - make -C workspace/ config=dist
+    - premake5 gmake2 --os=macosx --cc=gcc
+    - make -C workspace/ config=dist
+  artifacts:
+    paths:
+      - bin/Dist
+      # depending on your build setup it's most likely a good idea to cache outputs to reduce the build time
+      # cache:
+      #   paths:
+      #     - "*.o"
+
+# run tests using the binary built before
+test:
+  stage: test
+  script:
+    - ./bin/Dist/linux-x86_64/Main
