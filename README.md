@@ -9,6 +9,7 @@ This is a 3d programming lanugage in the same way ARGH is a 2d programming langu
 
 # Example Programs
 ## An accumulator
+```
 Size()
 4,4,4
 sdre,
@@ -31,4 +32,4 @@ jlpk,
 jk,
 wkFh,
 -----
-
+```
