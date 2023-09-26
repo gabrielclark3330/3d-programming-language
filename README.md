@@ -70,8 +70,6 @@ Remember, this language functions in a 3D grid. As such, it can execute in all t
 /rayLibArgh` in Visual Studio and run `rayLibArgh.cpp`
 
 # .3D file format
-Certainly! Based on the example you've given, I'll attempt to provide a general guideline or format for writing programs in this "language". 
-
 ### Program Structure for the 3D Language:
 
 1. **Initialization:**
@@ -84,10 +82,8 @@ This specifies the size of the grid. In the provided example, it's `4,4,4`.
 2. **Program Body:** 
 The program body consists of a series of layers (in this example, four layers). Each layer consists of rows and each row consists of cells, similar to a 3D matrix or tensor.
 
-- Each cell contains either a command, a number, a space (interpreted as a null operation), or a combination of these.
-- Commands are executed based on the current cell's position and contents. The semantics of commands are implied but not fully defined in your examples. However, based on some observations:
-  - `s`, `d`, `r`, `e`, `j`, `l`, `w`, `h`, `k`, `p`, `f`, `A`, and `F` seem to be commands.
-  - Some commands (e.g., `j`) appear multiple times, possibly implying looping or jumping mechanisms.
+- Each cell contains either a command, a number, or a space (interpreted as a null operation).
+- Commands are executed based on the current cell's position and contents.
 
 3. **Delimiter:**
 ```
@@ -108,9 +104,6 @@ This separates each layer. It’s essential for distinguishing between the layer
 5. **Whitespace:** Utilize spaces for null operations or placeholders. This helps maintain the grid's shape when not all cells in a row have operations.
 
 6. **End of File:** The program concludes when all layers are defined, and no additional delimiters are required after the last layer.
-
-For a thorough understanding and a complete guide, you'd need to provide a detailed list of commands and their exact functions. The example given hints at complex operations such as loops, but without a clear command list, it's speculative to assume their exact behavior.
-
 
 # Example Program
 ## A simple accumulator looks as follows
