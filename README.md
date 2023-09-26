@@ -8,7 +8,7 @@ This is a 3d programming lanugage in the same way ARGH is a 2d programming langu
 /rayLibArgh` in Visual Studio and run `rayLibArgh.cpp`
 
 # Example Programs
-## An accumulator
+## A simple accumulator looks as follows
 ```
 Size()
 4,4,4
