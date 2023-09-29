@@ -1,7 +1,7 @@
 # Programming Language Specification:
 
 ## Description:
-The language described here is a 3D Esolang, similar to ARGH. Its execution space is a 3D grid where instructions are executed based on the current direction of the instruction pointer and its location within the grid. This language interacts with a stack, and the grid can be thought of as both the program and memory.
+The language described is a 3D Esolang, similar to ARGH. Its execution space is a 3D grid where instructions are executed based on the current direction of the instruction pointer and its location within the grid. This language interacts with a stack, and the grid can be thought of as both the program and memory.
 
 ## Basic Concepts:
 
@@ -20,8 +20,8 @@ The language described here is a 3D Esolang, similar to ARGH. Its execution spac
 4. **`d`**: Duplicate the top value on the stack.
 5. **`F`**: Fetch (pop) the value from the top of the stack and store it in the cell above.
 6. **`f`**: Fetch (pop) the value from the top of the stack and store it in the cell below.
-7. **`G`**: Get one byte from stdin and store in the cell above the IP.
-8. **`g`**: Get one byte from stdin and store in the cell below the IP.
+7. **`G`**: Get one byte from stdin and store it in the cell above the IP.
+8. **`g`**: Get one byte from stdin and store it in the cell below the IP.
 9. **`R`**: Reduce the value on top of the stack by the value of the cell above.
 10. **`r`**: Reduce the value on top of the stack by the value of the cell below.
 11. **`S`**: Store (push) the value of the cell above the current cell onto the stack.
@@ -53,16 +53,6 @@ The language described here is a 3D Esolang, similar to ARGH. Its execution spac
 ### Special:
 
 1. **`#`**: Behaves like `j` but only if its position in the code/data array is (0,0) and only if there's a `!` in the cell on its right side.
-
-## Notes:
-
-- This language is Turing complete given infinite state size.
-- The state's size is defined by stateSize.x, stateSize.y, and stateSize.z respectively for dimensions.
-- The IP's position is defined by instructionPointer.x, instructionPointer.y, and instructionPointer.z respectively.
-- The values in the grid cells and stack are expected to be char values.
-- There are checks in place to ensure IP doesn't go out of bounds in the state grid.
-
-Remember, this language functions in a 3D grid. As such, it can execute in all three dimensions allowing for very intricate designs and interactions. Programmers should carefully design their program grid to ensure the desired behavior is achieved.
 
 # To run
 1. Install raylib
